@@ -6,19 +6,46 @@
   <title>COFFEE-DAY</title>
   <!-- It will connect to css page-->
   <link rel="stylesheet" href="style.css">
-  <!-- It will connect to box icon page-->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> -->
-  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <!-- It will connect to the boxicon page to use the icons-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <!--Navbar-->
   <header>
     <a href="#" class="logo">
-      <img src="img/logo1.png" alt="">
+      <img src="img/logo.png" alt="">
     </a>
   <!--Menu-icon-->  
-    
-  </header>
+    <i class='bx bx-menu' id="menu-icons"></i> 
+  <!--Links-->
+    <ul class="navbar">
+      <li><a href="#home"> HOME </a></li>
+      <li><a href="#ABOUT"> ABOUT </a></li>
+      <li><a href="#PRODUCTS"> PRODUCTS </a></li>
+      <li><a href="#CUSTOMERS"> CUSTOMERS </a></li>
+    </ul>
+  <!--Icons-->
+    <div class="header-icons">
+      <i class='bx bx-cart-alt'></i> 
+      <i class='bx bx-search' id="search-icon"></i> 
+    </div>
+  <!--search box-->
+    <div class="search-box">
+      <input type="search" name="" id="" placeholder="search Here...">
+    </div>
+</header>
+  <!--Home-->
+  <section class="home" id="home">
+    <div class="home-text">
+       <h1>start your day <br> with coffee</h1>
+       <p> Enjoy a cozy ambiance at our tea shop or order online for quick delivery.
+           We source fresh, organic ingredients to bring you authentic flavor in every sip.</p>   
+       <a href="#" class="btn"> Shop Now</a>
+    </div>
+    <div class="home-img">
+      <img src="img/main.png" alt="">
+    </div>
+  </section>
 
 
 

@@ -13,12 +13,82 @@
 :root{
   --main-color:#bc9667;
   --second-color:#edeae3;
-  --text-color:#1b1b1b;
+  --text-color:#000000;
   --bg-color:#fff;
 }
 img{
   width: 100%;
 }
 body{
-  color: var(--text-color)
+  color: var(--bg-color)
+}
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  right:0;
+  z-index:1000;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding:18px 100px;
+  transition:0.5s linear;
+  background-color: var(--text-color);
+}
+.logo img{
+  width: 60px;
+}
+.navbar{
+  display: flex;
+}
+.navbar a{
+  padding:8px 17px;
+  color:var(--bg-color);
+  font-size:1rem;
+  font-weight: 500;
+}
+.navbar a:hover{
+  background-color: var(--main-color);
+  border-radius:0.2rem;
+  transition:0.3s all linear;
+}
+.header-icon{
+  font-size:22px;
+  cursor:pointer;
+  z-index:1000;
+  display:flex;
+  column-gap:0.8rem;
+}
+.header-icons .bx{
+  color:var(--bg-color);
+}
+.header-icons .bx:hover {
+  color: var(--main-color);
+}
+#menu-icons{
+  color: var(--main-color);
+  font-size:2rem;
+  z-index:100001;
+  cursor:pointer;
+  display:none;
+}
+.search-box{
+  position:absolute;
+  left:50%;
+  top:100%;
+  transform:translate(-50%);
+  width:100%;
+}
+.search-box input{
+  padding:20px;
+  border:none;
+  outline:none;
+  width:100%;
+  font-size:100%;
+  color:var(--main-color);
+}
+.search-box input::placeholder {
+  font-size: 1rem;
+  font-weight:500;
 }
