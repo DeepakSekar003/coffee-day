@@ -6,7 +6,7 @@
   /* It will give the perfect box shape for the products */
   box-sizing: border-box;
   /* It will give the space in every section above */
-  scroll-padding-top: 70px;
+  scroll-padding-top: 100px;
   /* It will go smoothly to the next section while click */
   scroll-behavior:smooth;
   list-style:none;
