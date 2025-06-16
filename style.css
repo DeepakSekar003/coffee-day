@@ -3,27 +3,27 @@
   font-family: 'poppins',sans-serif;
   margin: 0;
   padding: 0;
+  /* It will give the perfect box shape for the products */
   box-sizing: border-box;
-  scroll-padding-top:4rem;
+  /* It will give the space in every section above */
+  scroll-padding-top: 70px;
+  /* It will go smoothly to the next section while click */
   scroll-behavior:smooth;
   list-style:none;
   text-decoration:none;
 }
-/* This one called as variables*/
+/* This one called as variables and we can access it everywhere globally*/
 :root{
   --main-color:#bc9667;
   --second-color:#edeae3;
-  --text-color:#000000;
+  --text-color:#000000;    
   --bg-color:#fff;
   /*Box Shadow*/
   --box-shadow: 2px 2px 10px 4px rgb(14 55 54 /15%);
 }
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px; 
-}
 section{
-  padding:  50px 100px;
+  /* It will give padding for all the section */
+  padding: 50px 100px;
 }
 img{
   width: 100%;
@@ -33,20 +33,26 @@ header{
   width:100%;
   top:0;
   right:0;
+  /* This will used for fix overriding the object*/
   z-index:1000;
   display:flex;
   justify-content: space-between;
   align-items:center;
-  padding:18px 100px;
   transition:0.5s linear;
-  background-color: var(--text-color);
+  padding: 14px 56px;
 }
-.logo img{
+header.shadow{
+  background:var(--text-color);
+  box-shadow:var(--box-shadow);
+}
+.logo img {
+  height:60px;
   width: 60px;
+  border-radius: 50px;
 }
-
 .navbar{
   display: flex;
+  background: var(--box-shadow);
 }
 .navbar a{
   padding:8px 17px;
@@ -59,11 +65,11 @@ header{
   border-radius:0.2rem;
   transition:0.3s all linear;
 }
-.header-icon{
+.header-icons{
   font-size:22px;
   cursor:pointer;
-  z-index:1000;
   display:flex;
+  /* It will apply on the each icon on top */
   column-gap:0.8rem;
 }
 .header-icons .bx{
@@ -74,22 +80,23 @@ header{
 }
 #menu-icons{
   color: var(--main-color);
-  font-size:2rem;
-  z-index:100001;
+  font-size:1.8rem;
   cursor:pointer;
   display:none;
 }
 .search-box{
   position:absolute;
-  left:50%;
-  top:-100%;
+  left:50%; 
+  top:-200%;  
+  /* It will used to centralized the searchbox */
   transform:translate(-50%);
-  width:100%;
+  width:100%; 
 }
 .search-box.active{
-  top:110%;
+  /* It will give the perfect space for search bar */
+  top:100%;
   box-shadow:var(--box-shadow);
-  transition: 0.2s all linear;
+  transition: 0.3s all linear;
 }
 .search-box input{
   padding:20px;
@@ -104,6 +111,7 @@ header{
   font-weight:500;
 }
 .home{
+  /* It will used as globally */
   min-height:100vh;
   background-image:url(img/bg.png);
   background-repeat:no-repeat;
@@ -111,7 +119,6 @@ header{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(16rem,auto));
   align-items:center;
-  gap:1.5rem;
 }
 .home-text p{
   font-size:0.938rem;
@@ -158,6 +165,7 @@ header{
   text-transform: uppercase;
 }
 .products-container{
+  /* It will use to create a responsive grid item */
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(280px, auto));
   gap: 1.5rem;
@@ -175,6 +183,7 @@ header{
 .products-container img{
   width:100%;
   height:250px;
+  /* It will fit the object in the container */
   object-fit: contain;
   object-position: center;
   padding: 20px;
@@ -217,12 +226,6 @@ header{
   gap: 1.5rem;
   margin-top:2rem;
 }
-.customers-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,auto));
-  gap:1.5rem;
-  margin-top:2rem;
-}
 .customers-container .box{
   padding: 20px;
   box-shadow: var(--box-shadow);
@@ -252,7 +255,7 @@ header{
 }
 .footer{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(15rem,auto));
+  grid-template-columns: repeat(auto-fit,minmax(13rem,auto));
   gap:1.5rem;
 }
 .footer-box h2{
@@ -280,7 +283,7 @@ header{
   background: var(--main-color);
   color: var(--bg-color);
 }
-footer-box h3{
+.footer-box h3{
   font-weight:600;
   margin-bottom:10px;
 }
@@ -304,5 +307,90 @@ footer-box h3{
   padding:20px;
   text-align:center;
   background:var(--second-color);
-
+}
+@media (max-width: 1058px){
+  header{
+    padding: 14px 56px;
+  }
+  section{
+    padding: 50px 60px;
+  }
+  .home-text h1{
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 991px){
+  header{
+    padding: 16px 4%;
+  }
+  section{
+    padding: 50px 4%;
+  }
+  .home-text h1{
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px){
+  header{
+    padding: 12px 4%;
+  }
+  #menu-icons{
+    display:initial;
+    color:white;
+    margin-right:25rem;
+ 
+  }
+  .navbar{
+    position:absolute;
+    top:-570px;
+    left:0;
+    right:0;
+    display: flex;
+    flex-direction: column;
+    background:var(--second-color);
+    row-gap: 1.4rem;
+    padding:20px;
+    transition: 0.3s;
+    text-align:center;
+  }
+  .navbar a{
+    color: var(--text-color);
+  }
+  .navbar a:hover{
+    color:var(--bg-color);
+  }
+  .navbar.active{
+    /* The menu will give the 100% of the space above of the navbar */
+    top:100%;
+  }
+  .about{
+    align-items:center;
+  }
+}
+@media (max-width:360px){
+ header { 
+  padding: 11px 4%;
+}
+ .logo img{
+  width: 45px;
+ }
+ .home-text{
+  padding-top:15px;
+ }
+ .home-text h1{
+  font-size:1.4rem;
+ }
+ .home-text p{
+  font-size:0.8rem;
+  font-weight:300;
+ }
+ .about-text {
+  text-align:center;
+ }
+ .about-text h2{
+  font-size: 1.2rem;
+ }
+ .heading h2{
+  font-size: 1.2rem;
+ }
 }
