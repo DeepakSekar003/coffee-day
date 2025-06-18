@@ -7,8 +7,15 @@ document.querySelector('#search-icon').onclick = () =>{
 let navbar = document.querySelector('.navbar');
 document.querySelector('#menu-icons').onclick = () =>{
   navbar.classList.toggle("active");
-    search.classList.remove("active");
+  search.classList.remove("active");
 };
+  function conformation(){
+    let userprefer = confirm("You want to ShopNow"); 
+    if(userprefer){
+    alert("Enjoy your day with new flavour");
+  } else{
+    alert("No worries! Take your time");
+  }};
 
 window.onscroll = () => {
   navbar.classList.remove('active');
@@ -16,6 +23,6 @@ window.onscroll = () => {
 }
 
 let header = document.querySelector('header');
-window.addEventListener('scroll' , () => {
+  window.addEventListener('scroll' , () => {
   header.classList.toggle('shadow', window.scrollY > 0);
 });     

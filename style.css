@@ -29,10 +29,9 @@ img{
   width: 100%;
 }
 header{
+  /* Fixed the screen doesnot move */
   position:fixed;
   width:100%;
-  top:0;
-  right:0;
   /* This will used for fix overriding the object*/
   z-index:1000;
   display:flex;
@@ -46,8 +45,8 @@ header.shadow{
   box-shadow:var(--box-shadow);
 }
 .logo img {
-  height:60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   border-radius: 50px;
 }
 .navbar{
@@ -69,7 +68,7 @@ header.shadow{
   font-size:22px;
   cursor:pointer;
   display:flex;
-  /* It will apply on the each icon on top */
+  /* It will apply on the each icon in top */
   column-gap:0.8rem;
 }
 .header-icons .bx{
@@ -79,12 +78,13 @@ header.shadow{
   color: var(--main-color);
 }
 #menu-icons{
-  color: var(--main-color);
+  color: var(--bg-color);
   font-size:1.8rem;
   cursor:pointer;
   display:none;
 }
 .search-box{
+  /* it go anywhere inside the parent */
   position:absolute;
   left:50%; 
   top:-200%;  
@@ -172,7 +172,6 @@ header.shadow{
   margin-top:2rem;
 }
 .products-container .box{
-  position: relative;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -195,11 +194,6 @@ header.shadow{
   font-weight: 600;
   text-transform:uppercase;
   margin: 0.5rem 0 0.5rem;
-}
-.products-container- .box .content{
-  display:flex;
-  align-items:center;
-  justify-content: space-around;
 }
 .products-container .box .content span{
   padding:0 1rem;
@@ -224,7 +218,6 @@ header.shadow{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(280px, auto));
   gap: 1.5rem;
-  margin-top:2rem;
 }
 .customers-container .box{
   padding: 20px;
@@ -234,9 +227,6 @@ header.shadow{
 }
 .stars .bx{
   color:var(--main-color);
-}
-.customers-container .box p{
-  font-size:0.938rem;
 }
 .customers-container .box p{
   font-size:1.2rem;
@@ -267,7 +257,7 @@ header.shadow{
   font-size:0.938rem;
   margin-bottom:10px;
 }
-.social{
+.social{  
   display:flex;
   align-items:center;
   column-gap:0.5rem;
@@ -321,6 +311,7 @@ header.shadow{
 }
 @media (max-width: 991px){
   header{
+    /* Top and bottom can fixed and left and right are adjustable  */
     padding: 16px 4%;
   }
   section{
@@ -335,10 +326,9 @@ header.shadow{
     padding: 12px 4%;
   }
   #menu-icons{
+    /* removes any custom display styles like display: none */
     display:initial;
-    color:white;
-    margin-right:25rem;
- 
+    margin-right:15rem;
   }
   .navbar{
     position:absolute;
