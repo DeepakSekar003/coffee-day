@@ -17,6 +17,17 @@ document.querySelector('#menu-icons').onclick = () =>{
     alert("No worries! Take your time");
   }};
 
+let cartCount = 0;
+const cartCountElement = document.getElementById('cart-count');
+const cartButtons = document.querySelectorAll('.add-cart');
+
+cartButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    cartCount++;
+    cartCountElement.textContent = cartCount;
+  });
+});
+
 window.onscroll = () => {
   navbar.classList.remove('active');
   search.classList.remove('active');
