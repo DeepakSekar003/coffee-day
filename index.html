@@ -26,17 +26,32 @@
     </ul>
   <!--Icons-->
     <div class="header-icons">
-      <a href="#" class="cart-container">
-      <i class='bx bx-cart-alt'></i>
-      <span class="cart-count" id="cart-count">0</span>
-      </a>
-      <i class='bx bx-search' id="search-icon"></i> 
+     <div class="cart-container">
+     <i class='bx bx-cart-alt' id="cart-icon"></i>
+     <span class="cart-count" id="cart-count">0</span>
+     </div>
+     <i class='bx bx-search' id="search-icon"></i> 
     </div>
+
+    <!-- Cart Sidebar -->
+   <div id="cart-sidebar" class="cart-sidebar">
+     <div class="cart-header">
+     <h2>My Cart</h2>
+     <span id="close-cart" class="close-btn">&times;</span>
+    </div>
+    <div id="cart-items" class="cart-items">Your cart is empty</div>
+    <div class="cart-footer">
+     <h3>Total: RS.<span id="cart-total">0.00</span></h3>
+   </div>
+  </div>
+  
   <!--search box-->
     <div class="search-box">
       <input type="search" name="" id="" placeholder="search Here...">
     </div>
 </header>
+
+
   <!--Home-->
   <section class="home" id="home">
     <div class="home-text">
@@ -74,6 +89,7 @@
       <h3> American Pure</h3>
       <div class="content">
         <span>RS.340</span>
+        <!-- Add to cart functionality:allows users to select items and add them to a virtual shopping cart -->
         <a href="#" class="add-cart">Add to cart</a>
       </div>
     </div>

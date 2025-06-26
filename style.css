@@ -167,8 +167,6 @@ header.shadow{
 .cart-container {
   position: relative;
   font-size: 28px;
-  color: black;
-  text-decoration: none;
 }
 
 .cart-count {
@@ -178,9 +176,65 @@ header.shadow{
   background: red;
   color: white;
   font-size: 12px;
-  padding: 2px 6px;
+  padding: 1px 6px;
   border-radius: 50%;
 }
+ .cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+  transition: right 1s ease;
+  padding: 20px;
+  overflow-y: auto;
+}
+.cart-sidebar.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-items {
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.cart-footer {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
 
 .products-container{
   /* It will use to create a responsive grid item */
