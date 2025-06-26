@@ -168,7 +168,18 @@ header.shadow{
   position: relative;
   font-size: 28px;
 }
-
+.popup{
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%)   ;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
 .cart-count {
   position: absolute;
   top: -8px;
@@ -179,6 +190,7 @@ header.shadow{
   padding: 1px 6px;
   border-radius: 50%;
 }
+
  .cart-sidebar {
   position: fixed;
   top: 0;

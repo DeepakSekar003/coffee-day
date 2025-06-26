@@ -9,6 +9,12 @@ document.querySelector('#menu-icons').onclick = () =>{
   navbar.classList.toggle("active");
   search.classList.remove("active");
 };
+
+let carticon = document.querySelector('cart-container');
+document.querySelector('#cart-icon').onclick = () =>{
+   carticon.classList.toggle("active");
+}
+
   function conformation(){
     let userprefer = confirm("You want to ShopNow"); 
     if(userprefer){
@@ -99,6 +105,24 @@ function removeItem(index) {
   cart.splice(index, 1);
   updateCartUI();
 }
+
+//pop up
+function showPopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 2000); // hide after 2 seconds
+}
+
+document.querySelectorAll(".add-cart").forEach(button => {
+  button.addEventListener("click", function () {
+   showPopup();
+  });
+});
+
+
 
 
 window.onscroll = () => {
