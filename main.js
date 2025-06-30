@@ -100,11 +100,16 @@ function updateCartUI() {
   cartCount.textContent = count;
 }
 
-// Remove from cart
+// Remove one quantity from cart item
 function removeItem(index) {
-  cart.splice(index, 1);
-  updateCartUI();
+  if (cart[index].quantity > 1) {
+    cart[index].quantity -= 1;
+  } else {
+    cart.splice(index, 1); // remove completely if quantity is 1
+  }
+  updateCartUI();  
 }
+
 
 //pop up
 function showPopup() {
@@ -113,17 +118,14 @@ function showPopup() {
 
   setTimeout(() => {
     popup.style.display = "none";
-  }, 2000); // hide after 2 seconds
+  }, 2000); // hide after 2 seconds 
 }
 
 document.querySelectorAll(".add-cart").forEach(button => {
   button.addEventListener("click", function () {
-   showPopup();
+  showPopup();
   });
 });
-
-
-
 
 window.onscroll = () => {
   navbar.classList.remove('active');

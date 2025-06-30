@@ -171,14 +171,15 @@ header.shadow{
 .popup{
   display: none;
   position: fixed;
-  top: 20px;
+  bottom:10px;
   left: 50%;
   transform: translateX(-50%)   ;
   background: #333;
-  color: #fff;
+  color: var(--bg-color);
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: bold;
+  z-index:1000;
 }
 .cart-count {
   position: absolute;
@@ -197,7 +198,7 @@ header.shadow{
   right: -400px;
   width: 350px;
   height: 100%;
-  background: #fff;
+  background: var(--bg-color);
   box-shadow: -4px 0 10px rgba(0,0,0,0.2);
   transition: right 1s ease;
   padding: 20px;
@@ -272,7 +273,7 @@ header.shadow{
 .products-container img{
   width:100%;
   height:250px;
-  /* It will fit the object in the container */
+/* It will fit the object in the container */ 
   object-fit: contain;
   object-position: center;
   padding: 20px;
