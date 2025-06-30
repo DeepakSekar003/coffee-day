@@ -2,19 +2,15 @@ let search = document.querySelector('.search-box');
 document.querySelector('#search-icon').onclick = () =>{
   search.classList.toggle("active");
   navbar.classList.remove("active");
+  cartSidebar.classList.remove("active");
 };
 
 let navbar = document.querySelector('.navbar');
 document.querySelector('#menu-icons').onclick = () =>{
   navbar.classList.toggle("active");
   search.classList.remove("active");
+  cartSidebar.classList.remove("active");
 };
-
-let carticon = document.querySelector('cart-container');
-document.querySelector('#cart-icon').onclick = () =>{
-   carticon.classList.toggle("active");
-}
-
   function conformation(){
     let userprefer = confirm("You want to ShopNow"); 
     if(userprefer){
@@ -38,6 +34,8 @@ let cart = [];
 // Open sidebar
 cartIcon.onclick = () => {
 cartSidebar.classList.add("active");
+search.classList.remove("active");
+navbar.classList.remove("active");
 };
 
 // Close sidebar
