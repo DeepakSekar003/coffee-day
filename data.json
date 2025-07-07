@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "image": "img/coffee 1.png",
+      "name": "American Pure",
+      "price": 340
+    },
+    {
+      "image": "img/coffee 2.png",
+      "name": "Bayars",
+      "price": 280
+    },
+    {
+      "image": "img/coffee 3.png",
+      "name": "Sea",
+      "price": 250
+    },
+    {
+      "image": "img/coffee 4.png",
+      "name": "Gozeniths",
+      "price": 100
+    },
+    {
+      "image": "img/coffee 5.png",
+      "name": "Bevzilla Instant",
+      "price": 175
+    },
+    {
+      "image": "img/coffee 6.png",
+      "name": "psd",
+      "price": 110
+    }
+  ],
+
+  "customers": [
+    {
+      "name": "Joseph",
+      "review": "I ordered this coffee for special occasions, but we ended up having it almost every day.",
+      "rating": 4.5,
+      "image": "img/rev1.png"
+    },
+    {
+      "name": "Mika",
+      "review": "Perfect coffee for after dinner, for those times when you want something a little special. Thank you.",
+      "rating": 4.5,
+      "image": "img/rev2.png"
+    },
+    {
+      "name": "Nani",
+      "review": "This coffee is expensive but worth the treat! I bought it for a friend and they are very pleased.",
+      "rating": 4.5,
+      "image": "img/rev3.png"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ document.querySelector('#menu-icons').onclick = () =>{
   cartSidebar.classList.remove("active");
 };
   function conformation(){
-    let userprefer = confirm("You want to ShopNow"); 
+    let userprefer = confirm("You want to ShopNow");    
     if(userprefer){
     alert("Enjoy your day with new flavour");
   } else{
@@ -26,7 +26,6 @@ const closeCart = document.getElementById("close-cart");
 const cartItemsContainer = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const cartCount = document.getElementById("cart-count");
-const addCartButtons = document.querySelectorAll(".add-cart");
 
 //it will hold all the added items
 let cart = [];
@@ -43,13 +42,66 @@ closeCart.onclick = () => {
 cartSidebar.classList.remove("active");
 };
 
+// Load products from JSON
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      loadProducts(data.products); 
+      loadCustomers(data.customers);
+    })
+    .catch(error => {
+      console.error('Error Loading Data', error);
+    });
+
+  function loadProducts(products) {
+    const container = document.getElementById('products-container');
+    container.innerHTML = "";
+    products.forEach(product => {
+      const productBox = document.createElement('div');
+      productBox.className = 'box';
+      productBox.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <div class="content">
+          <span>RS.${product.price}</span>
+          <a href="#" class="add-cart">Add to cart</a>
+        </div>`;
+      container.appendChild(productBox);
+    });
+  }
+});
+
+//load customer from json
+  function loadCustomers(customers) { 
+  const customerContainer = document.querySelector('.customers-container');
+  customerContainer.innerHTML = ""; 
+
+  customers.forEach(customer => {
+    const customerBox = document.createElement('div');
+    customerBox.classList.add('box');
+    customerBox.innerHTML = `
+      <div class="stars">
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star'></i>
+        <i class='bx bxs-star-half'></i>
+      </div>
+      <p>${customer.review}</p>
+      <h2>${customer.name}</h2>
+      <img src="${customer.image}" alt="${customer.name}">
+    `;
+    customerContainer.appendChild(customerBox);
+  });
+  }
+
 // Add to cart
-addCartButtons.forEach(button => {
-  button.addEventListener("click", (e) => {
-    // stop default anchor behavior
+    document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('add-cart')) {
     e.preventDefault();
-    //find the nearest parent element 
-    const productBox = button.closest(".box");
+                                                         
+    const productBox = e.target.closest(".box");
     const title = productBox.querySelector("h3").textContent;
     // parse:convert a string to num
     const price = parseFloat(productBox.querySelector("span").textContent.replace("RS.", ""));
@@ -57,15 +109,14 @@ addCartButtons.forEach(button => {
 
     const existingProduct = cart.find(item => item.title === title);
     if (existingProduct) {
-      existingProduct.quantity += 1;
+        existingProduct.quantity += 1;
     } else {
       cart.push({ title, price, image, quantity: 1 });
     }
    // refresh the sidebar content
     updateCartUI();
+  }
   });
-});
-
 // Update cart
 function updateCartUI() {
   // innerHTML:read current html and replace new
@@ -82,7 +133,7 @@ function updateCartUI() {
     cartItem.innerHTML = `<img src="${item.image}" alt="${item.title}">
       <div>
         <p>${item.title}</p>
-        <p>RS.${item.price} × ${item.quantity}</p>
+        <p>RS.${item.price} x ${item.quantity}</p>
       </div>
       <button onclick="removeItem(${index})" 
       style="background:red;color:white;border:none;padding:4px 8px;cursor:pointer;">X</button>`;
@@ -95,6 +146,7 @@ function updateCartUI() {
   }
   //it will take add a two number after the dot 
   cartTotal.textContent = total.toFixed(2);
+  //it will show a cart count 
   cartCount.textContent = count;
 }
 
@@ -127,7 +179,8 @@ document.querySelectorAll(".add-cart").forEach(button => {
 
 window.onscroll = () => {
   navbar.classList.remove('active');
-  search.classList.remove('active');
+  search.classList.remove('active'); 
+  
 }
 
 let header = document.querySelector('header');
